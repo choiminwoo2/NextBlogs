@@ -1,0 +1,85 @@
+.head{
+    display: flex;
+    flex-flow: nowrap column;
+    height: 8rem;
+    padding: 0px 4rem;
+    margin-top: 10px;
+}
+.head .nav-top .logo {
+   padding: 0px 4rem 0px 0px;
+   margin: auto 0;
+
+}
+.head .nav-top{
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    height:3rem;
+    width: 100%;
+}
+.head .nav-top nav{
+    display: block;
+    list-style: none;
+}
+.head .nav-top nav li{
+    display: inline;
+    border: 0px 1px 0px 1px solid black;
+    margin: 0px 10px;
+}
+
+/* down header*/
+.nav-down{
+    display: flex;
+    list-style: none;
+    flex-flow: nowrap row;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 5rem;
+    font-size: 1.125rem;
+    color: #868e96;
+    padding-right: 9px;
+    @media all and (max-width:479px) { 
+        font-size: 0.5rem;
+    }
+
+}
+.nav-down .down-menu li{
+    display: inline;
+    margin: 0 1.125rem 0 0;
+}
+
+    /* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/
+    @media screen and (min-width: 300px) and (max-width:478px){
+        .head{
+            height: 10rem;
+        }
+        .head .nav-top .logo {
+            padding: 0px 2rem 0px 0px;
+            font-size: 0.5rem;
+         
+         }
+         .nav-down{
+            display: flex;
+            list-style: none;
+            flex-flow: wrap column;
+            justify-content: space-between;
+            align-items: flex-start;
+            height: 5rem;
+            font-size: 1.125rem;
+            color: #868e96;
+            padding-right: 9px;
+        
+        }
+        .nav-down .down-menu li{
+            display: block;
+            margin: 0 1.125rem 0 0;
+        }
+        .menuIcon{
+            display: none;
+        }
+        .menu li:nth-child(2) > img{
+            display: none;
+        }
+    }
