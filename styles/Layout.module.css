@@ -1,0 +1,13 @@
+
+
+.light{
+    height: 100%;
+   background-color: rgba(235, 235, 235, 0.3);
+   color : black;
+
+}
+.dark{
+    height:100%;
+    background-color: #2c2c2c;
+    color: white;
+}

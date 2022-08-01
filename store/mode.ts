@@ -1,29 +1,23 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface initModeState{
-    counter : number
+    modSelector : boolean
 }
 const initialState : initModeState ={
-    counter : 0
+    modSelector : false
 }
 
 const modeSlice = createSlice({
     name: 'mode',
     initialState:initialState,
     reducers:{
-        increment:(state) =>{
-            state.counter = state.counter +1;
-        },
-        decrement:(state) =>{
-            state.counter = state.counter -1;
-        },
-        payloadMinus: (state, actions : PayloadAction<number>) =>{
-            state.counter += actions.payload;
+        permuteMode : (state) =>{
+            state.modSelector = !state.modSelector
         }
 
     }
 });
 
-export const { increment, decrement, payloadMinus} = modeSlice.actions
+export const { permuteMode} = modeSlice.actions
 
 export default modeSlice

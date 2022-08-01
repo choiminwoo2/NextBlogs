@@ -1,26 +1,56 @@
-import { useSelector } from 'react-redux';
-import styles from '../../styles/header.module.css';
-import { RootState } from '../../store';
+import { useSelector } from "react-redux";
+import styles from "../../styles/header.module.css";
+import { RootState, useAppDispath } from "../../store";
+import darkIcon from "../../assets/dark_moon.png";
+import lightIcon from "../../assets/light_sun.png";
+import { permuteMode } from "../../store/mode";
+import Image from "next/image";
+import Search from "../search/search";
 const ModeChanger = () => {
-  const modeIsDark = useSelector(( state : RootState) => state.mode.)
+  const modeInitDark = useSelector(
+    (state: RootState) => state.mode.modSelector
+  );
+  const dispath = useAppDispath();
+  let modeCondition;
+  if (modeInitDark) {
+    modeCondition = (
+      <ul className={styles.menu}>
+        <li>
+        <Search />
+        </li>
+        <li>
+        <Image
+          src={lightIcon}
+          alt={"클릭하면 밝은 화면으로 전환!"}
+          width={"25px"}
+          height={"25px"}
+          onClick={() => dispath(permuteMode())}
+        />
+        </li>
+      </ul>
+    );
+  } else {
+    modeCondition = (
+      <ul className={styles.menu}>
+        <li>
+        <Search />
+        </li>
+        <li>
+        <Image
+          src={darkIcon}
+          alt={"클릭하면 다크모드로 전환!"}
+          width={"25px"}
+          height={"25px"}
+          onClick={() => dispath(permuteMode())}
+        />
+         </li>
+      </ul>
+    );
+  }
   return (
     <nav>
       <ul className={styles.menu}>
-        <li>
-          {/* <?xml version="1.0" ?><svg
-              width="25px"
-              hight="25px"
-              viewBox="0 0 25 25"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title />
-              <path
-                d="M20.21,15.32A8.56,8.56,0,1,1,11.29,3.5a.5.5,0,0,1,.51.28.49.49,0,0,1-.09.57A6.46,6.46,0,0,0,9.8,9a6.57,6.57,0,0,0,9.71,5.72.52.52,0,0,1,.58.07A.52.52,0,0,1,20.21,15.32Z"
-                fill="#464646"
-              />
-            </svg> */}
-        </li>
-        {/* <li><img src="./search.png" width="25px" height="25px" / ></li> */}
+        <li>{modeCondition}</li>
       </ul>
     </nav>
   );

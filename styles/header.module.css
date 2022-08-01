@@ -1,9 +1,12 @@
+
+
+
 .head{
     display: flex;
     flex-flow: nowrap column;
     height: 8rem;
     padding: 0px 4rem;
-    margin-top: 10px;
+    padding-top:10px;
 }
 .head .nav-top .logo {
    padding: 0px 4rem 0px 0px;
