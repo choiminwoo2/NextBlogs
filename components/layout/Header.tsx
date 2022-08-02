@@ -2,13 +2,12 @@ import Image from "next/image";
 import { childProps } from "../../repository/defineProps";
 import styles from "../../styles/header.module.css";
 import ModeChanger from "../mode/ModeChanger";
-import searchIcon from "../../assets/search.png";
 const Header = (props: childProps) => {
   return (
     <header className={styles.head}>
       <div className={styles["nav-top"]}>
         <div className={styles.logo}>
-          <h2>개발자 블로그</h2>
+          <h2>PortoFolio</h2>
         </div>
         <ModeChanger />
       </div>

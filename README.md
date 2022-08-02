@@ -21,7 +21,5 @@ export declare const useSelector: <TState = unknown, Selected = unknown>(selecto
 스테이트의 타입을 지정하지 않으면 기본적으로 unknown이다.  
 initState를 export하여 타입을 지정하는 것으로 해결함. 
 ----------------------------
-2. ## `image tag onClick = {eventHandler} 에서 onClick속성에서 나오는 오류`
-----------------
-
+앞으로 에러는 이슈 탭에 작성할 예정.
 

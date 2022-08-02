@@ -3,8 +3,10 @@ interface SearchProps{
     content ?: string
 }
 
-const SearchInput = ({children, content = ''}: PropsWithChildren<SearchProps>) : void=>{
-
+const SearchInput = ({children, content = ''}: PropsWithChildren<SearchProps>) =>{
+    return <div>
+        
+    </div>
 }
 
 export default SearchInput;

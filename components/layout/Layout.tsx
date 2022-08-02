@@ -1,27 +1,36 @@
-import { useSelector } from 'react-redux'
-import {childProps} from '../../repository/defineProps'
-import { RootState } from '../../store'
-import Header from './Header'
-import styles from '../../styles/Layout.module.css';
-const Layout = (props : childProps) =>{
-    const modeCondition = useSelector((state: RootState) => state.mode.modSelector);
+import { useSelector } from "react-redux";
+import { childProps } from "../../repository/defineProps";
+import { RootState } from "../../store";
+import Header from "./Header";
+import styles from "../../styles/Layout.module.css";
+import { useEffect, useState } from "react";
+import HomePage from "../home/HomePages";
+const Layout = (props: childProps) => {
+  const modeCondition = useSelector(
+    (state: RootState) => state.mode.modSelector
+  );
+  const [modeColor, setModeColor] = useState(styles.light);
 
-    
-    let modeStyle;
-    if(modeCondition){
-        modeStyle = styles.dark
-    }else{
-        modeStyle = styles.light
+  useEffect(() => {
+    if (modeCondition) {
+      setModeColor(styles.dark)
+    } else {
+      setModeColor(styles.light)
     }
-    return (
-        <div className={modeStyle}>
-            <Header />
-            <main>
-                {props.children}
-            </main>
-        </div>
-    )
+  }, [modeCondition, setModeColor]);
+  // let modeStyle;
+  // if(modeCondition){
+  //     modeStyle = styles.dark
+  // }else{
+  //     modeStyle = styles.light
+  // }
 
-}
+  return (
+    <div className={modeColor}>
+      <Header />
+      <HomePage>{props.children}</HomePage>
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;

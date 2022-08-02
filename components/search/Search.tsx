@@ -1,16 +1,16 @@
 import Image from "next/image";
 import styles from "../../styles/search.module.css";
-import searchIcon from "../../assets/search.png";
-import { Fragment } from "react";
+import React, { Fragment } from "react";
 import SearchInput from "./SearchInput";
+import searchImg from '../../assets/search.png'
 
 const Search = () => {
   return (
     <Fragment>
-      {/* <SearchInput /> */}
+       <SearchInput /> 
       <Image
         className={styles.searchIcon}
-        src={searchIcon}
+        src={searchImg}
         alt="god"
         width={"23px"}
         height={"23px"}
@@ -19,4 +19,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default React.memo(Search);
