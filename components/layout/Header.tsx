@@ -1,8 +1,10 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { childProps } from "../../repository/defineProps";
 import styles from "../../styles/header.module.css";
 import ModeChanger from "../mode/ModeChanger";
 const Header = (props: childProps) => {
+  const router = useRouter();
   return (
     <header className={styles.head}>
       <div className={styles["nav-top"]}>
@@ -13,7 +15,7 @@ const Header = (props: childProps) => {
       </div>
       <div className={styles["nav-down"]}>
         <div className={styles["down-menu"]}>
-          <li>Home</li>
+          <li onClick={}>Home</li>
           <li>Skils</li>
           <li>TimeLine</li>
           <li>Project</li>
