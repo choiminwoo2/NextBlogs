@@ -10,9 +10,7 @@ import Layout from "../components/layout/Layout";
 
 const Home: NextPage = () => {
   return (
-    <Layout>
-      <HomePage />
-    </Layout>
+    <HomePage></HomePage>
   );
 };
 

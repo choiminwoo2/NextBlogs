@@ -28,7 +28,9 @@ const Layout = (props: childProps) => {
   return (
     <div className={modeColor}>
       <Header />
-      <HomePage>{props.children}</HomePage>
+      <div className="main">
+        {props.children}
+      </div>
     </div>
   );
 };
