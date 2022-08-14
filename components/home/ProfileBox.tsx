@@ -1,9 +1,17 @@
-import Image from "next/image"
-
+import Image from "next/image";
+import styles from './ProfileBox.module.css'
+import TypingAnimation from "./TypingAnimation";
 const ProfileBox = () => {
-    return <div>
-        <Image src="" alt="내용이 있습니다."/>
+  return (
+    <div className='typing-bg'>
+        <div className={styles.null}></div>
+        <div className='typing-card'>
+            <div>
+                <TypingAnimation />
+            </div>
+        </div>
     </div>
-}
+  );
+};
 
-export default ProfileBox
+export default ProfileBox;

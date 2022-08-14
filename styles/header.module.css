@@ -29,6 +29,7 @@
     margin: 0px 10px;
 }
 
+
 /* down header*/
 .nav-down{
     display: flex;
@@ -46,9 +47,18 @@
 
 }
 .nav-down .down-menu li{
-    display: inline;
+    display: inline-block;
+    text-align: center;
     margin: 0 1.125rem 0 0;
 }
+.menu{
+    display: flex;
+    flex-flow: row nowrap;
+}
+.menu li:nth-child(1) div input{
+    transform: translate(-7px, -7px);
+}
+
 
     /* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/
     @media screen and (min-width: 300px) and (max-width:500px){

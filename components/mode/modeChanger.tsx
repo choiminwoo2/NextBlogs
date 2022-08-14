@@ -4,7 +4,6 @@ import { RootState, useAppDispath } from "../../store";
 import { permuteMode } from "../../store/mode";
 import darkMode from "../../assets/dark_moon.png";
 import lightMode from "../../assets/light_sun.png";
-import Search from "../search/Search";
 import { useEffect, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 const ModeChanger = () => {
@@ -66,9 +65,6 @@ const ModeChanger = () => {
   return (
     <nav>
       <ul className={styles.menu}>
-        <li>
-          <Search />
-        </li>
         <li>
           <Image
             src={Icon}

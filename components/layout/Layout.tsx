@@ -4,7 +4,6 @@ import { RootState } from "../../store";
 import Header from "./Header";
 import styles from "../../styles/Layout.module.css";
 import { useEffect, useState } from "react";
-import HomePage from "../home/HomePages";
 const Layout = (props: childProps) => {
   const modeCondition = useSelector(
     (state: RootState) => state.mode.modSelector
@@ -18,19 +17,13 @@ const Layout = (props: childProps) => {
       setModeColor(styles.light)
     }
   }, [modeCondition, setModeColor]);
-  // let modeStyle;
-  // if(modeCondition){
-  //     modeStyle = styles.dark
-  // }else{
-  //     modeStyle = styles.light
-  // }
 
   return (
     <div className={modeColor}>
       <Header />
-      <div className="main">
+      <main className={styles.main}>
         {props.children}
-      </div>
+      </main>
     </div>
   );
 };

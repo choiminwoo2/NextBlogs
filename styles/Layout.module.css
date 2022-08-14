@@ -2,7 +2,7 @@
 .light {
   min-height: 100%;
   max-height: auto;
-  background-color: rgba(235, 235, 235, 0.7);
+  background-color: rgba(252, 252, 252, 0.8);
   color: black;
   transition: 0.3s ease-out;
 }
@@ -13,8 +13,15 @@
   color: white;
   transition: 0.3s ease-out;
 }
-.main {
-  height: 40rem;
+
+.main{
+  position: relative;
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: 50rem;
+  min-height: calc(100vh - 8rem);
+  max-height: 50rem;
+  height: inherit;
 }
 
 /* :root {

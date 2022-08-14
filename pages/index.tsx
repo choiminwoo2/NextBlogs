@@ -1,8 +1,5 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import HomePage from "../components/home/HomePages";
-import Layout from "../components/layout/Layout";
-
+import ProfileBox from "../components/home/ProfileBox";
 // export const getServerSideProps = wrapper.getServerSideProps((store) => async() => {
 //   store.dispatch(increment());
 // })
@@ -10,7 +7,7 @@ import Layout from "../components/layout/Layout";
 
 const Home: NextPage = () => {
   return (
-    <HomePage></HomePage>
+    <ProfileBox />
   );
 };
 
