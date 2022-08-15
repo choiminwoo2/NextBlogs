@@ -1,29 +1,38 @@
-import { useEffect, useState } from "react";
+import React, { Fragment, useCallback, useEffect, useState } from "react";
 import styles from "./TypeAnimation.module.css";
-
+import { useTypedAnimate, Phase } from "../hooks/useTypedAnimation";
+import { ClickProps } from "./ProfileBox";
 const typedMessage = [
   "안녕하세요 최민우입니다.",
   "사용자 편의의 개발하는 것이 목표입니다.",
 ];
-const useTypedAnimate = (typedMessge : string[]) => {
-  const [IsTypedState, setIsTypedState] = useState("");
-
+const TypingAnimation = (props: ClickProps) => {
+  // call custom Hooks
+  const [useStyle, setUseStyle] = useState<string>("");
+  const btnClickHandler = () => {
+    props.onClickHandler(Phase.Init);
+  };
+  const { isTypedState, selectTypeMessage, phase} = useTypedAnimate(
+    typedMessage,
+    props.getPhase
+  );
   useEffect(() => {
-    const nextTypedMessage = typedMessage[0].slice(0, IsTypedState.length + 1);
-    if (nextTypedMessage === IsTypedState) return;
-    const timeout = setTimeout(() => {
-      console.log(typedMessage.slice(0, IsTypedState.length + 1));
-      setIsTypedState(typedMessage[0].slice(0, IsTypedState.length + 1));
-    }, 150);
-    return () => clearTimeout(timeout)
-  }, [IsTypedState,typedMessge]);
-  return IsTypedState;
-};
-const TypingAnimation = () => {
- const typedAnimateMessage = useTypedAnimate(typedMessage);
+    if (phase !== Phase.Deleting) {
+      setUseStyle("end-cursor");
+    }
+    if(phase === Phase.Pausing){
+        setUseStyle('blink-cursor');
+    }
+    if(phase === Phase.End){
+        setUseStyle('blink-cursor')
+    }
+  }, [phase,props]);
   return (
     <h2>
-      <span className={styles["blink-cursur"]}>{typedAnimateMessage}</span>
+      {<span className={styles[`${useStyle}`]}>{isTypedState}</span>}
+      {Phase.End === phase && (
+        <button onClick={btnClickHandler}>다시 보기</button>
+      )}
     </h2>
   );
 };

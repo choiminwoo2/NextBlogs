@@ -1,10 +1,16 @@
-.blink-cursur::after{
+.blink-cursor::after{
     content: "|";
     display: inline-block;
     font-size: 40px;
     animation: blink 1s step-start infinite;
 }
-
+.end-cursor::after{
+    content: "|";
+    font-size: 40px;
+}
+.blink-cursur{
+    display: block;
+}
 @keyframes blink {
     50%{
         opacity: 0;
