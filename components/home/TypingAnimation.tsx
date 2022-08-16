@@ -12,28 +12,32 @@ const TypingAnimation = (props: ClickProps) => {
   const btnClickHandler = () => {
     props.onClickHandler(Phase.Init);
   };
-  const { isTypedState, selectTypeMessage, phase} = useTypedAnimate(
+  const { isTypedState, selectTypeMessage, phase } = useTypedAnimate(
     typedMessage,
     props.getPhase
   );
   useEffect(() => {
+    props.onClickHandler(Phase.Typing);
     if (phase !== Phase.Deleting) {
       setUseStyle("end-cursor");
     }
-    if(phase === Phase.Pausing){
-        setUseStyle('blink-cursor');
+    if (phase === Phase.Pausing) {
+      setUseStyle("blink-cursor");
     }
-    if(phase === Phase.End){
-        setUseStyle('blink-cursor')
+    if (phase === Phase.Pending) {
+      setUseStyle("blink-cursor");
     }
-  }, [phase,props]);
+    return () => {
+        props.onClickHandler(Phase.Typing);
+    }
+  }, [phase, props]);
   return (
-    <h2>
-      {<span className={styles[`${useStyle}`]}>{isTypedState}</span>}
-      {Phase.End === phase && (
+    <Fragment>
+      <h2>{<span className={styles[`${useStyle}`]}>{isTypedState}</span>}</h2>
+      {Phase.Pending === phase && (
         <button onClick={btnClickHandler}>다시 보기</button>
       )}
-    </h2>
+    </Fragment>
   );
 };
 export default TypingAnimation;
