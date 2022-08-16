@@ -4,7 +4,7 @@ export enum Phase {
   Pausing,
   Deleting,
   Init,
-  End
+  Pending
 }
 
 const TYPING_INTERVAL = 150;
@@ -37,7 +37,7 @@ export const useTypedAnimate = (typedMessage: string[], updatePhase: Phase) : {
             setPhase(Phase.Pausing);
             return;
           }
-          setPhase(Phase.End);
+          setPhase(Phase.Pending);
         }
         const timeout = setTimeout(() => {
           setIsTypedState(nextTypedMessage);
@@ -73,7 +73,7 @@ export const useTypedAnimate = (typedMessage: string[], updatePhase: Phase) : {
         }, PAUSE_MS);
         return ()=>clearTimeout(timeout)
       }
-      case Phase.End:{
+      case Phase.Pending:{
       }
       default:
         break;
