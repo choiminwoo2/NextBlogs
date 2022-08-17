@@ -65,7 +65,7 @@ const ModeChanger = () => {
   return (
     <nav>
       <ul className={styles.menu}>
-        <li>
+        <div className={styles['mode-box']}>
           <Image
             src={Icon}
             alt={"클릭하면 밝은 화면으로 전환!"}
@@ -73,7 +73,7 @@ const ModeChanger = () => {
             height={"25px"}
             onClick={() => dispath(permuteMode())}
           />
-        </li>
+        </div>
       </ul>
     </nav>
   );

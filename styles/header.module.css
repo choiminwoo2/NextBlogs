@@ -7,8 +7,12 @@
 }
 .head .nav-top .logo {
    padding: 0px 4rem 0px 0px;
+
    margin: auto 0;
 
+}
+.logo:hover{
+    cursor: pointer;
 }
 .head .nav-top{
     display: flex;
@@ -28,8 +32,39 @@
     border: 0px 1px 0px 1px solid black;
     margin: 0px 10px;
 }
-
-
+/* icon box*/
+.mode-box{
+    width: 26px;
+    height: 26px;
+}
+.mode-box:hover{
+    background-color: #868e96;
+    border-radius: 50%;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #868e96;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
 /* down header*/
 .nav-down{
     display: flex;
