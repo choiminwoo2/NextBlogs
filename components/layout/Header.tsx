@@ -17,11 +17,11 @@ const Header = (props: childProps) => {
       </div>
       <div className={styles["nav-down"]}>
         <div className={styles["down-menu"]}>
-          <li><Link href={'/'}>Home</Link></li>
-          <li><Link href={'/skills'}>Skils</Link></li>
-          <li><Link href={'/timeLine'}>TimeLine</Link></li>
-          <li><Link href={'/projects'}>Project</Link></li>
-          <li><Link href={'/info'}>info</Link></li>
+          <li className={styles['hover-underline-animation']}><Link href={'/'}>Home</Link></li>
+          <li className={styles['hover-underline-animation']}><Link href={'/skills'}>Skils</Link></li>
+          <li className={styles['hover-underline-animation']}><Link href={'/timeLine'}>TimeLine</Link></li>
+          <li className={styles['hover-underline-animation']}><Link href={'/projects'}>Project</Link></li>
+          <li className={styles['hover-underline-animation']}><Link href={'/info'}>info</Link></li>
         </div>
         <div className={styles.menuIcon}>
         </div>
