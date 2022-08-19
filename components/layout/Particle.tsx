@@ -4,14 +4,14 @@ import { loadFull } from "tsparticles";
 import { Container, Engine } from "tsparticles-engine";
 import { modeProps } from "./Layout";
 
-interface Action {
+interface modeAction {
   type: string;
 }
 interface initColor {
   backgroundColor: string;
   particleColor: string[];
 }
-const colorReducer = (state: initColor, action: Action): initColor => {
+const colorReducer = (state: initColor, action: modeAction): initColor => {
   switch (action.type) {
     case "light":
       return {
@@ -33,7 +33,7 @@ const initState: initColor = {
   particleColor: ["#000000", "#303030", "#FFE3F1", "##00C9C8"],
 };
 const Particle = (props: modeProps) => {
-  const [state, dispath] = useReducer(colorReducer, initState);
+  const [colorState, dispath] = useReducer(colorReducer, initState);
 
   useEffect(() => {
     if (props.mode) {
@@ -63,7 +63,7 @@ const Particle = (props: modeProps) => {
       options={{
         background: {
           color: {
-            value: state.backgroundColor,
+            value: colorState.backgroundColor,
           },
         },
         fpsLimit: 120,
@@ -91,10 +91,10 @@ const Particle = (props: modeProps) => {
         },
         particles: {
           color: {
-            value: [...state.particleColor],
+            value: colorState.particleColor,
           },
           links: {
-            color: state.particleColor,
+            color: colorState.particleColor,
             distance: 4,
             enable: true,
             opacity: 0.5,
