@@ -3,13 +3,20 @@ import { childProps } from "../../repository/defineProps";
 import { RootState } from "../../store";
 import Header from "./Header";
 import styles from "../../styles/Layout.module.css";
-import { useEffect, useState } from "react";
-const Layout = (props: childProps) => {
+import { Fragment, PropsWithChildren, useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import Particle from "./Particle";
+export interface modeProps{
+  mode: boolean
+}
+const Layout = ({children } : PropsWithChildren<modeProps>) => {
   const modeCondition = useSelector(
     (state: RootState) => state.mode.modSelector
   );
   const [modeColor, setModeColor] = useState(styles.light);
-
+  
+  const router = useRouter();
+  let pathname= router.pathname;
   useEffect(() => {
     if (modeCondition) {
       setModeColor(styles.dark)
@@ -19,12 +26,15 @@ const Layout = (props: childProps) => {
   }, [modeCondition, setModeColor]);
 
   return (
+    <Fragment>
+    {pathname === '/' && <Particle mode={modeCondition}/>}
     <div className={modeColor}>
       <Header />
       <main className={styles.main}>
-        {props.children}
+        {children}
       </main>
     </div>
+    </Fragment>
   );
 };
 

@@ -17,3 +17,8 @@
     }
     
 }
+.word{
+    white-space: pre-line;
+    margin:0 auto;
+    padding-top:6rem;
+}
