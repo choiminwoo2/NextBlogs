@@ -1,22 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useRef } from "react";
 import { childProps } from "../../repository/defineProps";
 import styles from "../../styles/header.module.css";
 import ModeChanger from "../mode/ModeChanger";
 const Header = (props: childProps) => {
   const router = useRouter();
-  
+  const activeHandler = () =>{
+    
+  }
   return (
     <header className={styles.head}>
       <div className={styles["nav-top"]}>
         <div className={styles.logo}>
-          <h2>PortoFolio</h2>
+          <Link href={'/'}><h2>PortoFolio</h2></Link>
         </div>
         <ModeChanger />
       </div>
       <div className={styles["nav-down"]}>
-        <div className={styles["down-menu"]}>
+        <div className={styles["down-menu"]} onClick={activeHandler}>
           <li className={styles['hover-underline-animation']}><Link href={'/'}>Home</Link></li>
           <li className={styles['hover-underline-animation']}><Link href={'/skills'}>Skils</Link></li>
           <li className={styles['hover-underline-animation']}><Link href={'/timeLine'}>TimeLine</Link></li>

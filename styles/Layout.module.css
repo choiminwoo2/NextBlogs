@@ -17,8 +17,6 @@
 .main{
   position: relative;
   margin: 0 auto;
-  margin-top: 1rem;
-  width: 50rem;
   min-height: calc(100vh - 8rem);
   max-height: 50rem;
   height: inherit;
