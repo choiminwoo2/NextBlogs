@@ -7,7 +7,7 @@ export enum Phase {
   Pending
 }
 
-const TYPING_INTERVAL = 150;
+const TYPING_INTERVAL = 120;
 const PAUSE_MS = 1000;
 const DELETING_INTERVAL = 30;
 

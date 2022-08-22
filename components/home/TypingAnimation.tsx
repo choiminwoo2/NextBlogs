@@ -5,7 +5,7 @@ import { ClickProps } from "./ProfileBox";
 import Link from "next/link";
 const typedMessage = [
   "안녕하세요",
-  "신입 개발자를 꿈꾸는 \n 최민우입니다.",
+  "신입 개발자를\n 꿈꾸는 최민우입니다.",
   "사용자 편의의\n 개발하는 것이 목표입니다.",
 ];
 const TypingAnimation = (props: ClickProps) => {
@@ -16,7 +16,7 @@ const TypingAnimation = (props: ClickProps) => {
   };
   const { isTypedState, selectTypeMessage, phase } = useTypedAnimate(
     typedMessage,
-    props.getPhase
+    props.getPhase,
   );
   useEffect(() => {
     props.onClickHandler(Phase.Typing);
@@ -38,8 +38,8 @@ const TypingAnimation = (props: ClickProps) => {
       <h2 className={styles.word}>{<span className={styles[`${useStyle}`]} aria-label={selectTypeMessage} >{isTypedState}</span>}</h2>
       {Phase.Pending === phase && (
         <Fragment>
-        <button onClick={btnClickHandler}>다시 보기</button>
-        <Link href={"/skills"}>더 보기</Link>
+        <button className={styles.button} onClick={btnClickHandler}>다시 보기</button>
+        <Link className={styles.link} href={"/skills"}>더 보기</Link>
         </Fragment>
       )}
     </Fragment>

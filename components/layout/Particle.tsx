@@ -16,7 +16,7 @@ const colorReducer = (state: initColor, action: modeAction): initColor => {
     case "light":
       return {
         backgroundColor: "#ffffff",
-        particleColor: ["#8685EF", "#FFDFCA", "#FFE3F1", "##E3E0F3"],
+        particleColor: ["#8685EF", "#FFDFCA", "#FFE3F1", "#E3E0F3"],
       };
     case "dark":
       return {
@@ -43,9 +43,6 @@ const Particle = (props: modeProps) => {
     }
   }, [props]);
   const particlesInit = useCallback(async (engine: Engine) => {
-
-    // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(engine);
   }, []);
@@ -109,8 +106,8 @@ const Particle = (props: modeProps) => {
             outModes: {
               default: "bounce",
             },
-            random: false,
-            speed: 1,
+            random: true,
+            speed: 2,
             straight: false,
           },
           number: {
@@ -128,7 +125,7 @@ const Particle = (props: modeProps) => {
             type: "circle",
           },
           size: {
-            value: { min: 2, max: 5 },
+            value: { min: 3, max: 6 },
           },
         },
         detectRetina: false,

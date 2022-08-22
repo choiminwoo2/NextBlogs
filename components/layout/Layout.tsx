@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { childProps } from "../../repository/defineProps";
 import { RootState } from "../../store";
 import Header from "./Header";
 import styles from "../../styles/Layout.module.css";
@@ -9,7 +8,7 @@ import Particle from "./Particle";
 export interface modeProps{
   mode: boolean
 }
-const Layout = ({children } : PropsWithChildren<modeProps>) => {
+const Layout = ({children } : PropsWithChildren) => {
   const modeCondition = useSelector(
     (state: RootState) => state.mode.modSelector
   );
@@ -34,6 +33,7 @@ const Layout = ({children } : PropsWithChildren<modeProps>) => {
         {children}
       </main>
     </div>
+  
     </Fragment>
   );
 };

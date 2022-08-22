@@ -11,7 +11,6 @@ const ProfileBox = () => {
   const clickRePlay = useCallback((reRending: Phase) => {
     setIsGetPhase(reRending);
   },[]);
-  
   return (
     <div className={styles['typing-bg']}>
       <div className={styles.null}></div>
@@ -25,4 +24,4 @@ const ProfileBox = () => {
   );
 };
 
-export default React.memo(ProfileBox);
+export default ProfileBox;

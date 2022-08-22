@@ -22,3 +22,11 @@
     margin:0 auto;
     padding-top:6rem;
 }
+.link{
+    display: block;
+    margin : 0;
+}
+.button{
+    display: block;
+    margin : 1.5rem auto;
+}
