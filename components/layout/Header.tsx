@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { childProps } from "../../repository/defineProps";
 import styles from "../../styles/header.module.css";
 import ModeChanger from "../mode/modeChanger"
-const Header = (props: childProps) => {
+const Header = () => {
   return (
     <header className={styles.head}>
       <div className={styles["nav-top"]}>
