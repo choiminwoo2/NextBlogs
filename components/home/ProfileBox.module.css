@@ -2,12 +2,12 @@
     background-color: rgba(230, 230, 230, 0.7);
     height: 100vw;
 }
-.null{
-    min-height: 6rem;
-}
 .typing-bg{
     width: 100vw;
+    height:80vh;
     margin:0 auto;
+    display: flex;
+    align-items: center;
 }
 .typing-card{
     position: relative;

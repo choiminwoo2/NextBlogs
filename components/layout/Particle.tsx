@@ -20,7 +20,7 @@ const colorReducer = (state: initColor, action: modeAction): initColor => {
       };
     case "dark":
       return {
-        backgroundColor: "#000000",
+        backgroundColor: "#2c2c2c;",
         particleColor: ["#ffffff", "#C6C6C6", "#F2ECFF", "#005A34"],
       };
     default:

@@ -11,14 +11,15 @@ const ProfileBox = () => {
   const clickRePlay = useCallback((reRending: Phase) => {
     setIsGetPhase(reRending);
   },[]);
+  useEffect(()=>{
+    setIsGetPhase(Phase.Typing);
+  },[isGetPhase])
   return (
     <div className={styles['typing-bg']}>
-      <div className={styles.null}></div>
       <div className={styles['typing-card']}>
         {isGetPhase === Phase.Typing && (
           <TypingAnimation onClickHandler={clickRePlay} getPhase={isGetPhase} />
         )}
-        {isGetPhase === Phase.Init &&  <TypingAnimation onClickHandler={clickRePlay} getPhase={isGetPhase} />}
       </div>
     </div>
   );
