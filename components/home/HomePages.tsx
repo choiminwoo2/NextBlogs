@@ -1,7 +1,7 @@
-import { childProps } from "../../repository/defineProps";
+
 import ProfileBox from "./ProfileBox";
 import React from "react"
-const HomePages = (props: childProps) => {
+const HomePages = () => {
   return (
       <ProfileBox />
   );
