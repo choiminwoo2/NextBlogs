@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
 .blink-cursor::after{
     content: "|";
     display: inline-block;
@@ -17,16 +19,96 @@
     }
     
 }
+@keyframes jittery {
+    5%,
+    50% {
+      transform: scale(1);
+    }
+  
+    10% {
+      transform: scale(0.9);
+    }
+  
+    15% {
+      transform: scale(1.15);
+    }
+  
+    20% {
+      transform: scale(1.15) rotate(-5deg);
+    }
+  
+    25% {
+      transform: scale(1.15) rotate(5deg);
+    }
+  
+    30% {
+      transform: scale(1.15) rotate(-3deg);
+    }
+  
+    35% {
+      transform: scale(1.15) rotate(2deg);
+    }
+  
+    40% {
+      transform: scale(1.15) rotate(0);
+    }
+  }
+@keyframes sliding {
+    0%{
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(20%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+    
+}
 .word{
     white-space: pre-line;
     margin:0 auto;
+    font-family: "paybooc-Light", sans-serif;
     padding-top:6rem;
 }
 .link{
     display: block;
     margin : 0;
 }
+.linkBox{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.next{
+    font-family: "paybooc-Light", sans-serif;
+    top:0.3rem;
+    font-weight: 600;
+    color : #6698cb;
+    animation: sliding 1.5s ease-out;
+}
+.next:hover{
+    cursor: pointer;
+}
 .button{
     display: block;
-    margin : 1.5rem auto;
+    border:0;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 0.25rem;
+    margin : 1rem auto;
+    font-family: "paybooc-Light", sans-serif;
+}
+.button:hover{
+    cursor: pointer;
+    outline: none;
+}
+.jittery{
+    animation: jittery 4s infinite;
+}
+.primary{
+    color: white;
+    background: #6698cb;
 }

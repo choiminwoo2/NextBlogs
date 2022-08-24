@@ -3,12 +3,11 @@ export enum Phase {
   Typing,
   Pausing,
   Deleting,
-  Init,
   Pending
 }
 
-const TYPING_INTERVAL = 120;
-const PAUSE_MS = 1000;
+const TYPING_INTERVAL = 80;
+const PAUSE_MS = 300;
 const DELETING_INTERVAL = 30;
 
 export const useTypedAnimate = (typedMessage: string[], updatePhase: Phase) : {
@@ -21,12 +20,12 @@ export const useTypedAnimate = (typedMessage: string[], updatePhase: Phase) : {
   const [isTypedState, setIsTypedState] = useState<string>("");
   useEffect(() => {
     switch (phase) {
-        case Phase.Init:{
-            setIsTypedState("");
-            setSelectedIndex(0);
-            setPhase(Phase.Typing)
-            return;
-        }
+        // case Phase.Init:{
+        //     setIsTypedState("");
+        //     setSelectedIndex(0);
+        //     setPhase(Phase.Typing)
+        //     return;
+        // }
       case Phase.Typing: {
         const nextTypedMessage = typedMessage[selectedIndex].slice(
           0,
