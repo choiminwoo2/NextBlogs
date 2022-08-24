@@ -1,7 +1,7 @@
 
 const MySkill = () =>{
     return (
-        <div></div>
+        <div className=""></div>
     );
 }
 
