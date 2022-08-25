@@ -20,12 +20,6 @@ export const useTypedAnimate = (typedMessage: string[], updatePhase: Phase) : {
   const [isTypedState, setIsTypedState] = useState<string>("");
   useEffect(() => {
     switch (phase) {
-        // case Phase.Init:{
-        //     setIsTypedState("");
-        //     setSelectedIndex(0);
-        //     setPhase(Phase.Typing)
-        //     return;
-        // }
       case Phase.Typing: {
         const nextTypedMessage = typedMessage[selectedIndex].slice(
           0,

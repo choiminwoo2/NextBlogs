@@ -3,6 +3,7 @@ import styles from "../../styles/header.module.css";
 import ModeChanger from "../mode/modeChanger";
 import menuIcon from '../../assets/menu_icon.png';
 import Image from "next/image";
+import {menus} from '../../data/LinkData'
 import { Fragment, useState } from "react";
 import Menu from "./Menu";
 const Header = () => {
@@ -27,17 +28,11 @@ const Header = () => {
       </div>
       <div className={styles["nav-down"]}>
         <div className={styles["down-menu"]}>
-          <li className={styles["hover-underline-animation"]}>
-            <Link href={"/"}>Home</Link>
+          {menus.map((menuItem)=>(
+            <li className={styles["hover-underline-animation"]} key={menuItem.url}>
+            <Link href={menuItem.url}>{menuItem.menu}</Link>
           </li>
-          <li className={styles["hover-underline-animation"]}>
-            <Link href={"/skills"}>Skils</Link>
-          </li>
-          {/* <li className={styles['hover-underline-animation']}><Link href={'/timeLine'}>TimeLine</Link></li> */}
-          <li className={styles["hover-underline-animation"]}>
-            <Link href={"/projects"}>Project</Link>
-          </li>
-          {/* <li className={styles['hover-underline-animation']}><Link href={'/info'}>info</Link></li> */}
+          ))}
         </div>
       </div>
     </header>

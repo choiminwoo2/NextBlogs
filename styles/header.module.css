@@ -73,7 +73,7 @@
     justify-content: space-between;
     align-items: flex-end;
     height: 5rem;
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     color: #868e96;
     padding-right: 9px;
     @media all and (max-width:479px) { 
@@ -101,7 +101,7 @@
     /* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/
     @media screen and (min-width: 300px) and (max-width:500px){
         .head{
-            height: 12rem;
+            height: auto;
             padding: 0px 1.5rem;
         }
         .head .nav-top .logo {
@@ -115,7 +115,7 @@
             flex-flow: wrap column;
             justify-content: center;
             align-items: flex-start;
-            height: 5rem;
+            height: 0rem;
             font-size: 1.125rem;
             color: #868e96;
             height: inherit;

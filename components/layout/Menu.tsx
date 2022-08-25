@@ -1,16 +1,8 @@
 import Link from "next/link";
 import Modal from "../UI/Modal";
+import {menus} from '../../data/LinkData'
 
-interface menuItems {
-  url: string;
-  menu: string;
-}
-const menus: menuItems[] = [
-  { url: "/", menu: "Home" },
-  { url: "/skills", menu: "Skills" },
-  { url: "/projects", menu: "Project" },
-];
-export interface Iprops{
+interface Iprops{
     onClose: () => void
 }
 const Menu = (props :Iprops) => {
