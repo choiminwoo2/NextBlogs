@@ -8,19 +8,19 @@ interface modeAction {
   type: string;
 }
 interface initColor {
-  backgroundColor: string;
-  particleColor: string[];
+  // backgroundColor: string;
+  particleColor: string[]
 }
 const colorReducer = (state: initColor, action: modeAction): initColor => {
   switch (action.type) {
     case "light":
       return {
-        backgroundColor: "#ffffff",
+        // backgroundColor: "#ffffdf",
         particleColor: ["#8685EF", "#FFDFCA", "#FFE3F1", "#E3E0F3"],
       };
     case "dark":
       return {
-        backgroundColor: "#2c2c2c;",
+        // backgroundColor: "#2c2c2c;",
         particleColor: ["#ffffff", "#C6C6C6", "#F2ECFF", "#005A34"],
       };
     default:
@@ -29,7 +29,7 @@ const colorReducer = (state: initColor, action: modeAction): initColor => {
   return state;
 };
 const initState: initColor = {
-  backgroundColor: "#ffffff",
+  // backgroundColor: "#ffffdf",
   particleColor: ["#000000", "#303030", "#FFE3F1", "##00C9C8"],
 };
 const Particle = (props: modeProps) => {
@@ -58,12 +58,12 @@ const Particle = (props: modeProps) => {
       init={particlesInit}
       loaded={particlesLoaded}
       options={{
-        background: {
-          color: {
-            value: colorState.backgroundColor,
-          },
-        },
-        fpsLimit: 120,
+        // background: {
+        //   color: {
+        //     value: colorState.backgroundColor,
+        //   },
+        // },
+        fpsLimit: 60,
         interactivity: {
           events: {
             onClick: {
@@ -92,9 +92,9 @@ const Particle = (props: modeProps) => {
           },
           links: {
             color: colorState.particleColor,
-            distance: 4,
+            distance: 5,
             enable: true,
-            opacity: 0.5,
+            opacity: 0.6,
             width: 1,
           },
           collisions: {
@@ -115,7 +115,7 @@ const Particle = (props: modeProps) => {
               enable: true,
               area: 800,
             },
-            value: 130,
+            value: 100,
           },
           connect: {},
           opacity: {
@@ -128,7 +128,7 @@ const Particle = (props: modeProps) => {
             value: { min: 3, max: 6 },
           },
         },
-        detectRetina: false,
+        detectRetina: true,
       }}
     />
   );

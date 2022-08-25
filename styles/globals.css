@@ -3,13 +3,14 @@ html{
   min-height: 100%;
   height: 100%;
 }
-
+.particle, .particle > canvas { z-index: 1 !important; }
 html,
 body {
   min-height: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
+  z-index:2;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }

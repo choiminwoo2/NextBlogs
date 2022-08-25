@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import Header from "./Header";
 import styles from "../../styles/Layout.module.css";
+import Footer from './Footer';
 import { Fragment, PropsWithChildren, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Particle from "./Particle";
@@ -32,6 +33,7 @@ const Layout = ({children } : PropsWithChildren) => {
       <main className={styles.main}>
         {children}
       </main>
+      <Footer />
     </div>
   
     </Fragment>
