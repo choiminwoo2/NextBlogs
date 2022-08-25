@@ -8,7 +8,8 @@ import MySkill from "../components/skill/MySkill";
 // })
 
 const Home: NextPage = () => {
-  const 
+  //기능 추가해야 할것.
+  // useRef() 사용해서 scrollTop, scrollEnd 만들기.
   return (
       <Fragment>
       <ProfileBox />
