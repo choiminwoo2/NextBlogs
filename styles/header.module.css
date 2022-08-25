@@ -93,6 +93,9 @@
 .menu li:nth-child(1) div input{
     transform: translate(-7px, -7px);
 }
+.menuIcon{
+    display: none;
+}
 
 
     /* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/
@@ -108,7 +111,7 @@
          
          }
          .nav-down{
-            display: flex;
+            display: none;
             list-style: none;
             flex-flow: wrap column;
             justify-content: center;
@@ -124,9 +127,9 @@
             margin: 0 1.125rem 0 0;
         }
         .menuIcon{
-            display: none;
-        }
-        .menu li:nth-child(2) > img{
-            display: none;
+            display: block;
+            position: absolute;
+            top: 5px;
+            left:10px;
         }
     }

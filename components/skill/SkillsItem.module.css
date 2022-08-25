@@ -1,0 +1,88 @@
+@media screen and (max-width: 588px) {
+    .card{
+        position: relative;
+        min-height:85vw;
+        min-width: 60vw;
+        margin: 0 auto;
+        row-gap: 2rem;
+    }
+    .card-title{
+        position: absolute;
+        font-size: 2rem;
+        top: -10px;
+        left: -10px ;
+        background-color: #D8F3FF;
+        border : 3px solid #2C6595;
+        min-width: 8rem;
+        text-align: center;
+        height: 3rem;
+    }
+    
+}
+.skills-content{
+    display: flex;
+    align-items: center;
+}
+.skills-word{
+    font-family:'Gill Sans', 'Gill Sans MT', sans-serif;
+    font-weight: 500;
+    margin-top: 3rem;
+    line-height: 1.5rem;
+    padding : 0 10px;
+    white-space: pre-line;
+}
+.card:nth-child(2n){
+    animation: sildeEventRight 0.9s ease-out;
+}
+.card{
+    position: relative;
+    border-radius: 0.25rem;
+    margin-top:2rem;
+    height: 12rem;
+    border: 2px solid #2C6595;
+    background-color: #D8F3FF;
+    align-items: center;
+    row-gap: 2rem;
+    width:30vw;
+
+}
+.card:nth-child(odd){
+
+    animation: sildeEventLeft 0.9s ease-out;
+}
+.card-title{
+    position: absolute;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #563624;
+    top: -10px;
+    left: -10px ;
+    background-color: #D8F3FF;
+    border : 3px solid #2C6595;
+    min-width: 8rem;
+    text-align: center;
+    height: 3rem;
+    transform: rotate(-10deg);
+}
+@keyframes sildeEventLeft {
+    0%{
+        transform: perspective(2500px) rotateY(180deg);
+    }
+    50%{
+    
+    }
+    100%{
+        transform: perspective(2500px) rotateY(0)
+    }
+}
+@keyframes sildeEventRight {
+    0%{
+        transform: translateX(+100%);
+    }
+    50%{
+        transform: translateX(-10%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}

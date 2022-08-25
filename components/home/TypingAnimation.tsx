@@ -48,16 +48,15 @@ const TypingAnimation = (props: ClickProps) => {
       </h2>
       {Phase.Pending === phase && (
         <Fragment>
+            <div className={styles.linkBox}>
+              <span className={`${styles.next}`}  onClick={btnClickHandler}>다시 보기</span>
+            </div>
+          <Link  href={"/skills"}>
           <button
             className={`${styles.button} ${styles.jittery} ${styles.primary}`}
-            onClick={btnClickHandler}
           >
-            다시 보기
+            다음 페이지
           </button>
-          <Link className={styles.link} href={"/skills"}>
-            <div className={styles.linkBox}>
-              <span className={`${styles.next}`}>다음 페이지</span>
-            </div>
           </Link>
         </Fragment>
       )}
