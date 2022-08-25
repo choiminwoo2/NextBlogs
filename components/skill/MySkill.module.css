@@ -1,0 +1,23 @@
+.skills-main{
+    padding-top: 50px;
+    width: 70vw;
+    height:auto;
+    margin:0 auto;
+    display: grid;
+    grid-column:  35vw 35vw;
+    grid-template-columns: 35vw 35vw;
+    grid-auto-rows: auto;
+}
+
+@media screen and (max-width: 588px) {
+    .skills-main{
+        padding-top: 50px;
+        width: 70vw;
+        margin:0 auto;
+        display: grid;
+        grid-template-columns: 50vw;
+        grid-auto-rows: 85vw;
+        row-gap: 2rem;
+    }
+    
+}

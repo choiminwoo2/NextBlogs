@@ -71,10 +71,6 @@
     font-family: "paybooc-Light", sans-serif;
     padding-top:6rem;
 }
-.link{
-    display: block;
-    margin : 0;
-}
 .linkBox{
     position: relative;
     display: flex;

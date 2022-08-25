@@ -2,7 +2,7 @@
 .light {
   min-height: 100%;
   max-height: auto;
-  background-color: rgba(252, 252, 252, 0.8);
+  background-color: rgba(255, 255, 255, 1);
   color: black;
   transition: 0.3s ease-out;
 }
