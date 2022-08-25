@@ -13,6 +13,7 @@
     .skills-main{
         padding-top: 50px;
         width: 70vw;
+        height: 100vw;
         margin:0 auto;
         display: grid;
         grid-template-columns: 50vw;
