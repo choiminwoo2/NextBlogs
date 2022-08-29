@@ -1,6 +1,28 @@
 # `Next.js로 포트폴리오 사이트 만들기`
 
 
+## 사용 기술
+![React](https://img.shields.io/badge/-react-3776AB.svg?&style=for-the-badge&logo=React&logoColor=white)
+![CSS3](https://img.shields.io/badge/-CSS3-FF2222.svg?&style=for-the-badge&logo=CSS3&logoColor=white)
+![HTML5](https://img.shields.io/badge/-HTML5-GA2410.svg?&style=for-the-badge&logo=HTML5&logoColor=white)
+![GIT](https://img.shields.io/badge/-GIT-000000.svg?&style=for-the-badge&logo=GIT&logoColor=white)
+![Javascript](https://img.shields.io/badge/-Javascript-fffd15.svg?&style=for-the-badge&logo=Javascript&logoColor=white)
+![Next](https://img.shields.io/badge/-Next-000000.svg?&style=for-the-badge&logo=Next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/-TypeScript-ffffff.svg?&style=for-the-badge&logo=TypeScript&logoColor=blue)
+
+## 주소
+[포트폴리오 사이트](https://next-portfolio-three-henna.vercel.app/)
+
+## 기능
+ + Dark, Light 모드 지원
+ + 모바일, PC 반응협 웹 지원
+ + Typing Animation 
+
+## 메인 페이지(모바일)
+
+## 메인 페이지(PC)
+
+
 ## `발생한 오류와 해결`
 ----------
 

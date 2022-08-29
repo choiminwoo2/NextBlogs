@@ -1,6 +1,7 @@
 .typing-Content{
     background-color: rgba(230, 230, 230, 0.7);
     height: 100vw;
+    font-size: 24px;
 }
 .typing-bg{
     width: 100vw;
