@@ -19,10 +19,15 @@
  + Typing Animation 
 
 ## 메인 페이지(모바일)
+![image](https://user-images.githubusercontent.com/50656081/187273358-a4cd2db0-2045-4b53-9eb0-3f0c391b7b56.png)
 
 ## 메인 페이지(PC)
+![image](https://user-images.githubusercontent.com/50656081/187273209-2e1daa5c-23e3-4a74-8190-ba33e399fa53.png)
 
-
+## 아쉬운 점
++ 완벽한 반응형 웹은 아닙니다. 중간 지점인 태블릿에서 대형 스마트폰까지 하지 못했습니다. 그리고 user-Agent에서 직접 기기를 확인하고 나눈것이 아니라 Css로 사용한 것이 아쉽습니다.
++ 브라우저 지원을 하지 못해서 아쉽습니다.
++ Next.js를 사용했지만, 실제 DB에서 가져오는 값이 없어서 getServerSideProps같은 ssr지원 함수를 사용하지 못한 것이 아쉽습니다. 사실상 vercel에 배포하기 위해서 사용한 느낌입니다.
 ## `발생한 오류와 해결`
 ----------
 
